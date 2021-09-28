@@ -56,15 +56,47 @@
 		D80200A72703010800AE735A /* BinanceApiTikersData */ = {
 			isa = PBXGroup;
 			children = (
-				D80200A82703010800AE735A /* AppDelegate.swift */,
-				D80200AA2703010800AE735A /* SceneDelegate.swift */,
-				D80200AC2703010800AE735A /* ViewController.swift */,
-				D80200AE2703010800AE735A /* Main.storyboard */,
-				D80200B12703010900AE735A /* Assets.xcassets */,
-				D80200B32703010900AE735A /* LaunchScreen.storyboard */,
-				D80200B62703010900AE735A /* Info.plist */,
+				D80200BE2703013D00AE735A /* ViewControllers */,
+				D80200BD2703012600AE735A /* Storyboards */,
+				D80200BC2703011700AE735A /* Resources */,
+				D80200BF2703014C00AE735A /* App */,
 			);
 			path = BinanceApiTikersData;
+			sourceTree = "<group>";
+		};
+		D80200BC2703011700AE735A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D80200B12703010900AE735A /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D80200BD2703012600AE735A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D80200AE2703010800AE735A /* Main.storyboard */,
+				D80200B32703010900AE735A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		D80200BE2703013D00AE735A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D80200AC2703010800AE735A /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D80200BF2703014C00AE735A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D80200A82703010800AE735A /* AppDelegate.swift */,
+				D80200AA2703010800AE735A /* SceneDelegate.swift */,
+				D80200B62703010900AE735A /* Info.plist */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,10 +323,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RV92NSXQKZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BinanceApiTikersData/Info.plist;
+				INFOPLIST_FILE = BinanceApiTikersData/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -306,7 +339,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,10 +352,11 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = RV92NSXQKZ;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = BinanceApiTikersData/Info.plist;
+				INFOPLIST_FILE = BinanceApiTikersData/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -334,7 +368,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
