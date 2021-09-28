@@ -11,7 +11,6 @@ class MainCollectionViewController: UICollectionViewController {
     
     let userActions = UserActions.allCases
     let myWatchlist = WatchList.shared
-    let allTickers = TickerList.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()

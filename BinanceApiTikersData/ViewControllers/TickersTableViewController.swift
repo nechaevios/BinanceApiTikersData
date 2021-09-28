@@ -9,7 +9,7 @@ import UIKit
 
 class TickersTableViewController: UITableViewController {
     
-    private var tickers: [Ticker] = []
+    private var tickers = TickerList.shared
     private var filteredTickers: [Ticker] = []
     
     private let searchController = UISearchController(searchResultsController: nil)
@@ -45,6 +45,11 @@ class TickersTableViewController: UITableViewController {
         definesPresentationContext = true
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     @objc private func refreshTable(sender: UIRefreshControl) {
         fetchAllPrices()
         sender.endRefreshing()
@@ -56,13 +61,13 @@ class TickersTableViewController: UITableViewController {
         if isFiltering {
             return filteredTickers.count
         }
-        return tickers.count
+        return tickers.tickerList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tickerCell", for: indexPath) as! TickerCell
         
-        let cellData = isFiltering ? filteredTickers[indexPath.row] : tickers[indexPath.row]
+        let cellData = isFiltering ? filteredTickers[indexPath.row] : tickers.tickerList[indexPath.row]
         
         cell.configure(with: cellData)
         
@@ -75,7 +80,7 @@ class TickersTableViewController: UITableViewController {
 extension TickersTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        let selectedTicker = isFiltering ? filteredTickers[indexPath.row] : tickers[indexPath.row]
+        let selectedTicker = isFiltering ? filteredTickers[indexPath.row] : tickers.tickerList[indexPath.row]
 
         let singleTickerVC = segue.destination as! SingleTickerViewController
         singleTickerVC.selectedTicker = selectedTicker
@@ -91,7 +96,7 @@ extension TickersTableViewController {
         NetworkManager.shared.fetch(dataType: [Ticker].self, from: ApiEndpoint.allTickers.rawValue) { result in
             switch result {
             case .success(let tickersData):
-                self.tickers = tickersData
+                self.tickers.tickerList = tickersData
                 self.tableView.reloadData()
                 self.spinnerView?.stopAnimating()
             case .failure(let error):
@@ -121,7 +126,7 @@ extension TickersTableViewController: UISearchResultsUpdating {
     }
     
     private func filterContentWithText (_ searchText: String) {
-        filteredTickers = tickers.filter({ ticker in
+        filteredTickers = tickers.tickerList.filter({ ticker in
             ticker.symbol.lowercased().contains(searchText.lowercased())
         })
         tableView.reloadData()
