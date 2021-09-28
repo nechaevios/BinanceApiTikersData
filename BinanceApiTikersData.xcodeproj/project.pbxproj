@@ -13,6 +13,9 @@
 		D80200B02703010800AE735A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80200AE2703010800AE735A /* Main.storyboard */; };
 		D80200B22703010900AE735A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80200B12703010900AE735A /* Assets.xcassets */; };
 		D80200B52703010900AE735A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80200B32703010900AE735A /* LaunchScreen.storyboard */; };
+		D80200C12703051F00AE735A /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C02703051F00AE735A /* MainCollectionViewController.swift */; };
+		D80200C32703063600AE735A /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C22703063600AE735A /* UserActionCell.swift */; };
+		D80200C6270309F900AE735A /* TickersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C5270309F900AE735A /* TickersTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		D80200B12703010900AE735A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D80200B42703010900AE735A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D80200B62703010900AE735A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D80200C02703051F00AE735A /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
+		D80200C22703063600AE735A /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
+		D80200C5270309F900AE735A /* TickersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 				D80200BD2703012600AE735A /* Storyboards */,
 				D80200BC2703011700AE735A /* Resources */,
 				D80200BF2703014C00AE735A /* App */,
+				D80200C42703063C00AE735A /* Views */,
 			);
 			path = BinanceApiTikersData;
 			sourceTree = "<group>";
@@ -85,6 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				D80200AC2703010800AE735A /* ViewController.swift */,
+				D80200C02703051F00AE735A /* MainCollectionViewController.swift */,
+				D80200C5270309F900AE735A /* TickersTableViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -97,6 +106,14 @@
 				D80200B62703010900AE735A /* Info.plist */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		D80200C42703063C00AE735A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D80200C22703063600AE735A /* UserActionCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,7 +187,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80200C6270309F900AE735A /* TickersTableViewController.swift in Sources */,
+				D80200C32703063600AE735A /* UserActionCell.swift in Sources */,
 				D80200AD2703010800AE735A /* ViewController.swift in Sources */,
+				D80200C12703051F00AE735A /* MainCollectionViewController.swift in Sources */,
 				D80200A92703010800AE735A /* AppDelegate.swift in Sources */,
 				D80200AB2703010800AE735A /* SceneDelegate.swift in Sources */,
 			);
