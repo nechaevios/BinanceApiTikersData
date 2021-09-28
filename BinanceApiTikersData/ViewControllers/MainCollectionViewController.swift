@@ -35,7 +35,7 @@ class MainCollectionViewController: UICollectionViewController {
         let userAction = userActions[indexPath.item]
         
         switch userAction {
-        case .showAllTickers: performSegue(withIdentifier: "showAllTickers", sender: nil)
+        case .showAllTickers: performSegue(withIdentifier: "showAll", sender: nil)
         case .showBtcUsdt: performSegue(withIdentifier: "showBtcUsdt", sender: nil)
         }
         
@@ -43,15 +43,13 @@ class MainCollectionViewController: UICollectionViewController {
     
     // MARK: Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showImage" {
-//            guard let singleImageVC = segue.destination as? SingleImageViewController else { return }
-//            singleImageVC.imageData = singleImage
-//
-//        } else if segue.identifier == "showGif" {
-//            guard let singleGifVC = segue.destination as? SingleGifViewController else { return }
-//            singleGifVC.imageData = singleGif
-//        }
+        if segue.identifier == "showAll" {
+            guard let tickersVC = segue.destination as?  TickersTableViewController else { return }
+            tickersVC.fetchAllPrices()
+        }
     }
+    
+
 
 }
 

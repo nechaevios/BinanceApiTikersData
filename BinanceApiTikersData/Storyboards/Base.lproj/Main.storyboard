@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Xn-8P-erq">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -13,7 +13,7 @@
             <objects>
                 <collectionViewController id="zBY-FR-0ss" customClass="MainCollectionViewController" customModule="BinanceApiTikersData" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="UL3-xa-TK2">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Flk-hK-9pR">
@@ -24,7 +24,7 @@
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" contentMode="center" reuseIdentifier="cell" id="I4c-wh-94o" customClass="UserActionCell" customModule="BinanceApiTikersData" customModuleProvider="target">
-                                <rect key="frame" x="57" y="20" width="300" height="80"/>
+                                <rect key="frame" x="10" y="20" width="300" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="300" height="80"/>
@@ -57,7 +57,7 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Binance Price Data" id="mml-ai-xwl"/>
                     <connections>
-                        <segue destination="J30-In-JU1" kind="show" identifier="showAllTickers" id="zji-I2-Kjp"/>
+                        <segue destination="J30-In-JU1" kind="show" identifier="showAll" id="zji-I2-Kjp"/>
                         <segue destination="pew-wC-Nqw" kind="show" identifier="showBtcUsdt" id="13p-iI-OHY"/>
                     </connections>
                 </collectionViewController>
@@ -70,17 +70,41 @@
             <objects>
                 <tableViewController id="J30-In-JU1" customClass="TickersTableViewController" customModule="BinanceApiTikersData" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="AHG-c9-MqR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tickerCell" id="rHa-AC-tHA">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tickerCell" id="rHa-AC-tHA" customClass="TickerCell" customModule="BinanceApiTikersData" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="rHa-AC-tHA" id="1JT-J7-JhB">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ticker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YfB-e5-mJT">
+                                            <rect key="frame" x="16" y="11" width="45" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="price" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJX-wx-SGK">
+                                            <rect key="frame" x="263.5" y="11" width="40.5" height="21.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="RJX-wx-SGK" secondAttribute="trailing" constant="16" id="bUv-c7-ZLg"/>
+                                        <constraint firstItem="YfB-e5-mJT" firstAttribute="leading" secondItem="1JT-J7-JhB" secondAttribute="leading" constant="16" id="fHI-AO-6a1"/>
+                                        <constraint firstItem="RJX-wx-SGK" firstAttribute="centerY" secondItem="1JT-J7-JhB" secondAttribute="centerY" id="hxM-Wv-pXl"/>
+                                        <constraint firstItem="YfB-e5-mJT" firstAttribute="centerY" secondItem="1JT-J7-JhB" secondAttribute="centerY" id="ikR-GS-GwW"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="tickerNameLabel" destination="YfB-e5-mJT" id="7pa-tF-8cc"/>
+                                    <outlet property="tickerPriceLabel" destination="RJX-wx-SGK" id="jcl-Wh-5BQ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -92,14 +116,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1R-s3-yO8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1593" y="70"/>
+            <point key="canvasLocation" x="1591.875" y="69.718309859154928"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="0ey-nc-mFg">
             <objects>
                 <viewController id="pew-wC-Nqw" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zat-RH-AxW">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uvg-Qo-xqm">
@@ -125,7 +149,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Xn-8P-erq" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="2wF-Ry-guC">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

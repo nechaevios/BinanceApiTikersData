@@ -16,6 +16,9 @@
 		D80200C12703051F00AE735A /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C02703051F00AE735A /* MainCollectionViewController.swift */; };
 		D80200C32703063600AE735A /* UserActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C22703063600AE735A /* UserActionCell.swift */; };
 		D80200C6270309F900AE735A /* TickersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C5270309F900AE735A /* TickersTableViewController.swift */; };
+		D80200C827030E8F00AE735A /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C727030E8F00AE735A /* Ticker.swift */; };
+		D80200CB2703173400AE735A /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200CA2703173400AE735A /* TickerCell.swift */; };
+		D80200CD27032E2900AE735A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200CC27032E2900AE735A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		D80200C02703051F00AE735A /* MainCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		D80200C22703063600AE735A /* UserActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActionCell.swift; sourceTree = "<group>"; };
 		D80200C5270309F900AE735A /* TickersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickersTableViewController.swift; sourceTree = "<group>"; };
+		D80200C727030E8F00AE735A /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		D80200CA2703173400AE735A /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
+		D80200CC27032E2900AE735A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,8 @@
 				D80200BC2703011700AE735A /* Resources */,
 				D80200BF2703014C00AE735A /* App */,
 				D80200C42703063C00AE735A /* Views */,
+				D80200C927030E9300AE735A /* Models */,
+				D80200CE27032E3E00AE735A /* Services */,
 			);
 			path = BinanceApiTikersData;
 			sourceTree = "<group>";
@@ -112,8 +120,25 @@
 			isa = PBXGroup;
 			children = (
 				D80200C22703063600AE735A /* UserActionCell.swift */,
+				D80200CA2703173400AE735A /* TickerCell.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		D80200C927030E9300AE735A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D80200C727030E8F00AE735A /* Ticker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D80200CE27032E3E00AE735A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D80200CC27032E2900AE735A /* NetworkManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,10 +212,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D80200CD27032E2900AE735A /* NetworkManager.swift in Sources */,
 				D80200C6270309F900AE735A /* TickersTableViewController.swift in Sources */,
 				D80200C32703063600AE735A /* UserActionCell.swift in Sources */,
+				D80200C827030E8F00AE735A /* Ticker.swift in Sources */,
 				D80200AD2703010800AE735A /* ViewController.swift in Sources */,
 				D80200C12703051F00AE735A /* MainCollectionViewController.swift in Sources */,
+				D80200CB2703173400AE735A /* TickerCell.swift in Sources */,
 				D80200A92703010800AE735A /* AppDelegate.swift in Sources */,
 				D80200AB2703010800AE735A /* SceneDelegate.swift in Sources */,
 			);
