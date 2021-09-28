@@ -10,6 +10,8 @@ import UIKit
 class MainCollectionViewController: UICollectionViewController {
     
     let userActions = UserActions.allCases
+    let myWatchlist = WatchList.shared
+    let allTickers = TickerList.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +38,7 @@ class MainCollectionViewController: UICollectionViewController {
         
         switch userAction {
         case .showAllTickers: performSegue(withIdentifier: "showAll", sender: nil)
-        case .showBtcUsdt: performSegue(withIdentifier: "showBtcUsdt", sender: nil)
+        case .showWatchlist: performSegue(withIdentifier: "showWatchlist", sender: nil)
         }
         
     }
@@ -55,7 +57,7 @@ class MainCollectionViewController: UICollectionViewController {
 
 extension MainCollectionViewController {
     enum UserActions: String, CaseIterable {
-        case showAllTickers = "All prices"
-        case showBtcUsdt = "BTC / USDT"
+        case showAllTickers = "Show all tickers"
+        case showWatchlist = "Show my watchlist"
     }
 }

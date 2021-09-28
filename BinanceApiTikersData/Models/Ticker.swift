@@ -9,7 +9,18 @@ import Foundation
 
 struct Ticker: Decodable {
     let symbol: String
-    let price: String
+    var price: String
+}
+
+extension Ticker: Comparable, Equatable {
+    static func < (lhs: Ticker, rhs: Ticker) -> Bool {
+        lhs.symbol < rhs.symbol
+    }
+    
+    static func == (lhs: Ticker, rhs: Ticker) -> Bool {
+        lhs.symbol == rhs.symbol
+    }
+
 }
 
 struct OrderBook: Decodable {
