@@ -19,6 +19,7 @@
 		D80200C827030E8F00AE735A /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C727030E8F00AE735A /* Ticker.swift */; };
 		D80200CB2703173400AE735A /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200CA2703173400AE735A /* TickerCell.swift */; };
 		D80200CD27032E2900AE735A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200CC27032E2900AE735A /* NetworkManager.swift */; };
+		D82C241727036B3200E46883 /* SingleTickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C241627036B3200E46883 /* SingleTickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		D80200C727030E8F00AE735A /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		D80200CA2703173400AE735A /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
 		D80200CC27032E2900AE735A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D82C241627036B3200E46883 /* SingleTickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 				D80200AC2703010800AE735A /* ViewController.swift */,
 				D80200C02703051F00AE735A /* MainCollectionViewController.swift */,
 				D80200C5270309F900AE735A /* TickersTableViewController.swift */,
+				D82C241627036B3200E46883 /* SingleTickerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				D80200C12703051F00AE735A /* MainCollectionViewController.swift in Sources */,
 				D80200CB2703173400AE735A /* TickerCell.swift in Sources */,
 				D80200A92703010800AE735A /* AppDelegate.swift in Sources */,
+				D82C241727036B3200E46883 /* SingleTickerViewController.swift in Sources */,
 				D80200AB2703010800AE735A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

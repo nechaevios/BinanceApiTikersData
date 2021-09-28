@@ -8,8 +8,9 @@
 import Foundation
 
 enum ApiEndpoint: String {
-    // single ticker +?symbol=LTCBTC
     case allTickers = "https://api.binance.com/api/v3/ticker/price"
+    case singleTicker = "https://api.binance.com/api/v3/ticker/price?symbol="
+    case singleOrderBook = "https://api.binance.com/api/v3/ticker/bookTicker?symbol="
 }
 
 enum NetworkError: Error {
