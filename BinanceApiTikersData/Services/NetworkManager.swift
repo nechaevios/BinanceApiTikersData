@@ -6,19 +6,20 @@
 //
 
 import Foundation
+import Alamofire
 
 enum ApiEndpoints: String {
     case allTickers = "https://api.binance.com/api/v3/ticker/price"
     case singleTicker = "https://api.binance.com/api/v3/ticker/price?symbol="
     case singleOrderBook = "https://api.binance.com/api/v3/ticker/bookTicker?symbol="
-
+    
 }
 
 enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingError
-
+    
 }
 
 class NetworkManager {
@@ -53,4 +54,34 @@ class NetworkManager {
         
     }
     
+    func fetchLastPrice(_ url: String, completion: @escaping(Result <Ticker, NetworkError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseJSON { responseData in
+                switch responseData.result {
+                case .success(let value):
+                    guard let lastPriceData = value as? [String: Any] else { return }
+                    let tickerData = Ticker(tickerData: lastPriceData)
+                    
+                    DispatchQueue.main.async {
+                        completion(.success(tickerData))
+                    }
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+            }
+    }
+    
+    func fetchOrderBook(_ url: String, completion: @escaping(Result <OrderBook, NetworkError>) -> Void) {
+        AF.request(url)
+            .validate()
+            .responseDecodable(of: OrderBook.self) { responseData in
+                switch responseData.result {
+                case .success(let value):
+                    completion(.success(value))
+                case .failure:
+                    completion(.failure(.decodingError))
+                }
+            }
+    }
 }

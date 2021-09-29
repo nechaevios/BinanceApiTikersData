@@ -84,8 +84,10 @@ extension TickersTableViewController {
 
         let singleTickerVC = segue.destination as! SingleTickerViewController
         singleTickerVC.selectedTicker = selectedTicker
-        singleTickerVC.fetchTickerOrderBook()
-        singleTickerVC.fetchSingleTickerData()
+//        singleTickerVC.fetchTickerOrderBook()
+//        singleTickerVC.fetchSingleTickerData()
+        singleTickerVC.alamofireUpdateLastPrice()
+        singleTickerVC.alamofireUpdateOrderBook()
         
     }
 }
