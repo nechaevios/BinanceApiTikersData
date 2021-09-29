@@ -10,7 +10,7 @@ import Alamofire
 
 class SingleTickerViewController: UIViewController {
     
-    @IBOutlet weak var tickerNameLabel: UILabel!
+//    @IBOutlet weak var tickerNameLabel: UILabel!
     @IBOutlet weak var tickerPriceLabel: UILabel!
     
     @IBOutlet weak var bidPriceLabel: UILabel!
@@ -23,7 +23,8 @@ class SingleTickerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tickerNameLabel.text = selectedTicker.symbol
+        navigationItem.title = selectedTicker.symbol
+//        tickerNameLabel.text = selectedTicker.symbol
         tickerPriceLabel.text = "Last price: \(selectedTicker.price)"
     }
     
@@ -33,7 +34,6 @@ class SingleTickerViewController: UIViewController {
         } else {
             failureAlert()
         }
-        
     }
     
     @IBAction func updateButtonPressed(_ sender: UIButton) {
@@ -43,7 +43,7 @@ class SingleTickerViewController: UIViewController {
     
     private func successAlert() {
         let alert = UIAlertController(
-            title: "Success",
+            title: "Success ✅",
             message: "\(selectedTicker.symbol) was added to watchlist",
             preferredStyle: .alert
         )
@@ -51,12 +51,11 @@ class SingleTickerViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         self.present(alert, animated: true)
-        
     }
     
     private func failureAlert() {
         let alert = UIAlertController(
-            title: "Failure",
+            title: "Failure ⛔️",
             message: "\(selectedTicker.symbol) is already in watchlist",
             preferredStyle: .alert
         )
@@ -64,9 +63,7 @@ class SingleTickerViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         self.present(alert, animated: true)
-        
     }
-    
 }
 
 extension SingleTickerViewController {
@@ -121,6 +118,7 @@ extension SingleTickerViewController {
         }
     }
     
+    /*
     func fetchSingleTickerData() {
         NetworkManager.shared.fetch(
             dataType: Ticker.self,
@@ -161,5 +159,5 @@ extension SingleTickerViewController {
         }
         
     }
-    
+    */
 }

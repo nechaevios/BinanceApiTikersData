@@ -25,7 +25,6 @@ extension Ticker: Comparable, Equatable {
     static func == (lhs: Ticker, rhs: Ticker) -> Bool {
         lhs.symbol == rhs.symbol
     }
-    
 }
 
 struct OrderBook: Decodable {

@@ -51,7 +51,6 @@ class NetworkManager {
                 completion(.failure(.decodingError))
             }
         }.resume()
-        
     }
     
     func fetchLastPrice(_ url: String, completion: @escaping(Result <Ticker, NetworkError>) -> Void) {

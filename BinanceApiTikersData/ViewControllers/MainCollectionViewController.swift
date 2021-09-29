@@ -14,15 +14,12 @@ class MainCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         userActions.count
-        
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! UserActionCell
-        
         cell.ActionLabel.text = userActions[indexPath.item].rawValue
         return cell
-        
     }
     
     // MARK: UICollectionViewDelegate
@@ -32,9 +29,8 @@ class MainCollectionViewController: UICollectionViewController {
         switch userAction {
         case .showAllTickers: performSegue(withIdentifier: "showAll", sender: nil)
         case .showWatchlist: performSegue(withIdentifier: "showWatchlist", sender: nil)
-        case .about: showAlert(alertTitle: "By Sergey Nechaev", alertMessage: "From traders to traders. Contacts: @Zerg666")
+        case .about: showAlert(alertTitle: "By Sergey Nechaev", alertMessage: "Contacts: ⌲ @Zerg666")
         }
-        
     }
     
     // MARK: Navigation
@@ -47,12 +43,10 @@ class MainCollectionViewController: UICollectionViewController {
                 showAlert(alertTitle: "Ooops 🚧", alertMessage: "Watchlist is empty. Add some tickers to watchlist", shouldRedirect: true, to: "showAll")
             }
         }
-        
     }
     
     private func redirectTo(segue identifier: String) {
         performSegue(withIdentifier: identifier, sender: nil)
-        
     }
     
     private func showAlert(alertTitle: String, alertMessage: String, shouldRedirect: Bool = false, to identifier: String = "") {
@@ -74,7 +68,6 @@ class MainCollectionViewController: UICollectionViewController {
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
-    
 }
 
 extension MainCollectionViewController {
@@ -83,5 +76,4 @@ extension MainCollectionViewController {
         case showWatchlist = "Show my watchlist"
         case about = "About"
     }
-    
 }

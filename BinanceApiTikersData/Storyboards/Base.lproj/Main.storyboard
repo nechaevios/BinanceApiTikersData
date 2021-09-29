@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <inset key="scrollIndicatorInsets" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Flk-hK-9pR">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="40" minimumInteritemSpacing="10" id="Flk-hK-9pR">
                             <size key="itemSize" width="280" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -48,7 +48,7 @@
                                 <size key="customSize" width="280" height="60"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="16"/>
+                                        <integer key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="681.15942028985512" y="69.642857142857139"/>
         </scene>
-        <!--Watch List Table View Controller-->
+        <!--My watchlist-->
         <scene sceneID="B5N-eR-BYA">
             <objects>
                 <tableViewController id="4jL-Mi-11W" customClass="WatchListTableViewController" customModule="BinanceApiTikersData" customModuleProvider="target" sceneMemberID="viewController">
@@ -80,7 +80,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="tickerCell" id="DRT-uB-1Xh" customClass="TickerCell" customModule="BinanceApiTikersData" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="tickerCell" id="DRT-uB-1Xh" customClass="TickerCell" customModule="BinanceApiTikersData" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="320" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DRT-uB-1Xh" id="xtd-OW-Vkc">
@@ -120,13 +120,13 @@
                             <outlet property="delegate" destination="4jL-Mi-11W" id="BQN-MO-Tms"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="GBC-0q-9Wd"/>
+                    <navigationItem key="navigationItem" title="My watchlist" id="GBC-0q-9Wd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mpc-cK-Bj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1592" y="860"/>
         </scene>
-        <!--Tickers Table View Controller-->
+        <!--All tickers-->
         <scene sceneID="Ltu-Xo-Ppc">
             <objects>
                 <tableViewController id="J30-In-JU1" customClass="TickersTableViewController" customModule="BinanceApiTikersData" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                             <outlet property="delegate" destination="J30-In-JU1" id="kKK-RM-jI7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ayZ-Qh-ieE"/>
+                    <navigationItem key="navigationItem" title="All tickers" id="ayZ-Qh-ieE"/>
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Zn1-g8-pzU">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -194,30 +194,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="LAf-5T-s7S" userLabel="Main Data">
-                                <rect key="frame" x="16" y="99" width="91" height="58.5"/>
+                                <rect key="frame" x="16" y="99" width="99" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ticker: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGb-SR-ilI">
-                                        <rect key="frame" x="0.0" y="0.0" width="74.5" height="26.5"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLp-eR-Bu8">
-                                        <rect key="frame" x="0.0" y="34.5" width="91" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="99" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qHQ-M7-wiF">
-                                <rect key="frame" x="16" y="179.5" width="121" height="24"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <rect key="frame" x="16" y="145" width="121" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ren-ew-Uuj">
-                                <rect key="frame" x="16" y="505" width="288" height="31"/>
+                                <rect key="frame" x="16" y="496" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="7Im-fQ-opl"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Add to watchlist">
                                     <color key="baseBackgroundColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -227,7 +224,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1Ik-WV-w9m">
-                                <rect key="frame" x="16" y="238" width="27" height="45"/>
+                                <rect key="frame" x="16" y="200" width="27" height="45"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ask" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iop-qT-MLr">
                                         <rect key="frame" x="0.0" y="0.0" width="27" height="19.5"/>
@@ -244,7 +241,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LzX-KO-TMn">
-                                <rect key="frame" x="55" y="211.5" width="130" height="71.5"/>
+                                <rect key="frame" x="55" y="173.5" width="130" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDO-Di-Aae">
                                         <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -269,18 +266,8 @@
                                     <constraint firstAttribute="width" constant="130" id="krb-aU-HQV"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-4m-U5F">
-                                <rect key="frame" x="16" y="452" width="288" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Update Data (alamofire)">
-                                    <color key="baseBackgroundColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="updateButtonPressed:" destination="nVo-72-5pR" eventType="touchUpInside" id="glw-tC-rp5"/>
-                                </connections>
-                            </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Fj-Ylx">
-                                <rect key="frame" x="199" y="211.5" width="110" height="71.5"/>
+                                <rect key="frame" x="199" y="173.5" width="110" height="71.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvl-OW-qGr">
                                         <rect key="frame" x="0.0" y="0.0" width="57" height="20.5"/>
@@ -305,6 +292,19 @@
                                     <constraint firstAttribute="width" constant="110" id="2oW-It-NWg"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-4m-U5F">
+                                <rect key="frame" x="16" y="424" width="288" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ARK-un-XtK"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reload price data">
+                                    <color key="baseBackgroundColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateButtonPressed:" destination="nVo-72-5pR" eventType="touchUpInside" id="glw-tC-rp5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yQb-Ty-Uec"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -312,20 +312,20 @@
                             <constraint firstItem="LzX-KO-TMn" firstAttribute="leading" secondItem="1Ik-WV-w9m" secondAttribute="trailing" constant="12" id="4zC-Cm-AUi"/>
                             <constraint firstItem="LAf-5T-s7S" firstAttribute="top" secondItem="yQb-Ty-Uec" secondAttribute="top" constant="8" id="5Oj-Re-DeG"/>
                             <constraint firstItem="qHQ-M7-wiF" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="8ha-Iw-lp5"/>
+                            <constraint firstItem="B5g-4m-U5F" firstAttribute="leading" secondItem="ren-ew-Uuj" secondAttribute="leading" id="Aan-JY-vwk"/>
                             <constraint firstItem="ren-ew-Uuj" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="BSw-dX-9sH"/>
                             <constraint firstItem="qHQ-M7-wiF" firstAttribute="top" secondItem="LAf-5T-s7S" secondAttribute="bottom" constant="22" id="BpG-Hr-jwv"/>
                             <constraint firstItem="yQb-Ty-Uec" firstAttribute="trailing" secondItem="qHQ-M7-wiF" secondAttribute="trailing" constant="183" id="GSC-Wa-Tg8"/>
-                            <constraint firstItem="ren-ew-Uuj" firstAttribute="top" secondItem="B5g-4m-U5F" secondAttribute="bottom" constant="22" id="JB2-61-sZQ"/>
                             <constraint firstItem="yQb-Ty-Uec" firstAttribute="trailing" secondItem="ren-ew-Uuj" secondAttribute="trailing" constant="16" id="L4X-Z5-XE2"/>
                             <constraint firstItem="LAf-5T-s7S" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="Lvk-ka-Kek"/>
-                            <constraint firstItem="yQb-Ty-Uec" firstAttribute="bottom" secondItem="ren-ew-Uuj" secondAttribute="bottom" constant="32" id="Mna-hO-reN"/>
                             <constraint firstItem="LzX-KO-TMn" firstAttribute="top" secondItem="qHQ-M7-wiF" secondAttribute="bottom" constant="8" symbolic="YES" id="Om8-NP-Zsq"/>
-                            <constraint firstItem="yQb-Ty-Uec" firstAttribute="trailing" secondItem="B5g-4m-U5F" secondAttribute="trailing" constant="16" id="jmO-hI-Ps3"/>
+                            <constraint firstItem="yQb-Ty-Uec" firstAttribute="bottom" secondItem="ren-ew-Uuj" secondAttribute="bottom" constant="32" id="lMZ-lD-C16"/>
                             <constraint firstItem="mAO-Fj-Ylx" firstAttribute="top" secondItem="qHQ-M7-wiF" secondAttribute="bottom" constant="8" symbolic="YES" id="nm7-5O-G9B"/>
                             <constraint firstItem="1Ik-WV-w9m" firstAttribute="top" secondItem="qHQ-M7-wiF" secondAttribute="bottom" constant="34.5" id="smo-DH-VI8"/>
-                            <constraint firstItem="B5g-4m-U5F" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="ugf-gN-lja"/>
                             <constraint firstItem="1Ik-WV-w9m" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="vEa-fr-yeS"/>
+                            <constraint firstItem="ren-ew-Uuj" firstAttribute="top" secondItem="B5g-4m-U5F" secondAttribute="bottom" constant="32" id="vOT-p3-Ekd"/>
                             <constraint firstItem="mAO-Fj-Ylx" firstAttribute="leading" secondItem="LzX-KO-TMn" secondAttribute="trailing" constant="14" id="xEe-Gb-Xw1"/>
+                            <constraint firstItem="B5g-4m-U5F" firstAttribute="trailing" secondItem="ren-ew-Uuj" secondAttribute="trailing" id="yJy-hI-AV8"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xkb-uK-YFe"/>
@@ -334,7 +334,6 @@
                         <outlet property="askVolumeLAbel" destination="1t5-4D-WCq" id="aON-co-gVQ"/>
                         <outlet property="bidPriceLabel" destination="wq4-NL-kaq" id="DbD-ut-fr0"/>
                         <outlet property="bidVolumeLabel" destination="buE-pF-ajH" id="DcG-OR-6Sd"/>
-                        <outlet property="tickerNameLabel" destination="hGb-SR-ilI" id="I3D-wB-Mnw"/>
                         <outlet property="tickerPriceLabel" destination="GLp-eR-Bu8" id="sbE-pq-Ngq"/>
                     </connections>
                 </viewController>
