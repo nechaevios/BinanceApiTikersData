@@ -297,6 +297,16 @@
                                     <constraint firstItem="mAO-Fj-Ylx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LzX-KO-TMn" secondAttribute="trailing" constant="10" id="icp-Oh-qpN"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B5g-4m-U5F">
+                                <rect key="frame" x="16" y="452" width="288" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Update Data (alamofire)">
+                                    <color key="baseBackgroundColor" red="0.80000000000000004" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="updateButtonPressed:" destination="nVo-72-5pR" eventType="touchUpInside" id="glw-tC-rp5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yQb-Ty-Uec"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -306,11 +316,14 @@
                             <constraint firstItem="ren-ew-Uuj" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="BSw-dX-9sH"/>
                             <constraint firstItem="qHQ-M7-wiF" firstAttribute="top" secondItem="LAf-5T-s7S" secondAttribute="bottom" constant="22" id="BpG-Hr-jwv"/>
                             <constraint firstItem="yQb-Ty-Uec" firstAttribute="trailing" secondItem="qHQ-M7-wiF" secondAttribute="trailing" constant="183" id="GSC-Wa-Tg8"/>
+                            <constraint firstItem="ren-ew-Uuj" firstAttribute="top" secondItem="B5g-4m-U5F" secondAttribute="bottom" constant="22" id="JB2-61-sZQ"/>
                             <constraint firstItem="yQb-Ty-Uec" firstAttribute="trailing" secondItem="ren-ew-Uuj" secondAttribute="trailing" constant="16" id="L4X-Z5-XE2"/>
                             <constraint firstItem="LAf-5T-s7S" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="Lvk-ka-Kek"/>
                             <constraint firstItem="yQb-Ty-Uec" firstAttribute="bottom" secondItem="ren-ew-Uuj" secondAttribute="bottom" constant="32" id="Mna-hO-reN"/>
                             <constraint firstItem="AZE-Vl-7po" firstAttribute="top" secondItem="qHQ-M7-wiF" secondAttribute="bottom" constant="8" id="QVW-AN-QbQ"/>
                             <constraint firstItem="AZE-Vl-7po" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="ScS-SL-a6F"/>
+                            <constraint firstItem="yQb-Ty-Uec" firstAttribute="trailing" secondItem="B5g-4m-U5F" secondAttribute="trailing" constant="16" id="jmO-hI-Ps3"/>
+                            <constraint firstItem="B5g-4m-U5F" firstAttribute="leading" secondItem="yQb-Ty-Uec" secondAttribute="leading" constant="16" id="ugf-gN-lja"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xkb-uK-YFe"/>

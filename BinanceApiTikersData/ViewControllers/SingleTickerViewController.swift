@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class SingleTickerViewController: UIViewController {
     
@@ -34,6 +35,10 @@ class SingleTickerViewController: UIViewController {
             failureAlert()
         }
         
+    }
+    
+    @IBAction func updateButtonPressed(_ sender: UIButton) {
+        alamofireUpdatelastPrice()
     }
     
     private func successAlert() {
@@ -67,6 +72,12 @@ class SingleTickerViewController: UIViewController {
 extension SingleTickerViewController {
     
     // MARK: Networking
+    func alamofireUpdatelastPrice() {
+        AF.request(ApiEndpoints.singleTicker.rawValue + selectedTicker.symbol)
+            .responseJSON { responseData in
+                print(responseData)
+            }
+    }
     func fetchSingleTickerData() {
         NetworkManager.shared.fetch(dataType: Ticker.self, from: ApiEndpoints.singleTicker.rawValue + selectedTicker.symbol) { result in
             switch result {
