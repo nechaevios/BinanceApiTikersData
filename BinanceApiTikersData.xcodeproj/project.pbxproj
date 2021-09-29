@@ -72,7 +72,6 @@
 				86044929583211827BAA50C4 /* Pods-BinanceApiTikersData.debug.xcconfig */,
 				F4448039AA12FA3AE4DDEF90 /* Pods-BinanceApiTikersData.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -98,12 +97,12 @@
 			isa = PBXGroup;
 			children = (
 				D80200BE2703013D00AE735A /* ViewControllers */,
+				D80200CE27032E3E00AE735A /* Services */,
 				D80200BD2703012600AE735A /* Storyboards */,
 				D80200BC2703011700AE735A /* Resources */,
 				D80200BF2703014C00AE735A /* App */,
 				D80200C42703063C00AE735A /* Views */,
 				D80200C927030E9300AE735A /* Models */,
-				D80200CE27032E3E00AE735A /* Services */,
 			);
 			path = BinanceApiTikersData;
 			sourceTree = "<group>";

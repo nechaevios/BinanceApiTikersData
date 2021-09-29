@@ -32,7 +32,7 @@ class MainCollectionViewController: UICollectionViewController {
         switch userAction {
         case .showAllTickers: performSegue(withIdentifier: "showAll", sender: nil)
         case .showWatchlist: performSegue(withIdentifier: "showWatchlist", sender: nil)
-        case .about: showAlert(alertTitle: "By Sergey Nechaev", alertMessage: "From traders to traders. Contacts: sergey@nechaev.ru")
+        case .about: showAlert(alertTitle: "By Sergey Nechaev", alertMessage: "From traders to traders. Contacts: @Zerg666")
         }
         
     }
@@ -62,10 +62,14 @@ class MainCollectionViewController: UICollectionViewController {
             preferredStyle: .alert
         )
         
-        let okAction = shouldRedirect ? UIAlertAction(title: "OK", style: .default)
-        { okAction in
-            self.redirectTo(segue: identifier)
-        } : UIAlertAction(title: "OK", style: .default)
+        var okAction: UIAlertAction
+        if shouldRedirect {
+            okAction = UIAlertAction(title: "OK", style: .default) { okAction in
+                self.redirectTo(segue: identifier)
+            }
+        } else {
+            okAction = UIAlertAction(title: "OK", style: .default)
+        }
         
         alert.addAction(okAction)
         self.present(alert, animated: true)

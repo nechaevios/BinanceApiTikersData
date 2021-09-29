@@ -24,8 +24,7 @@ class SingleTickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tickerNameLabel.text = selectedTicker.symbol
-        updateLabelsData(in: tickerPriceLabel, with: selectedTicker.price, forLastPrice: true)
-        
+        tickerPriceLabel.text = selectedTicker.price
     }
     
     @IBAction func addToWatchlist(_ sender: UIButton) {
@@ -91,7 +90,11 @@ extension SingleTickerViewController {
         { response in
             switch response {
             case .success(let tickerData):
-                self.updateLabelsData(in: self.tickerPriceLabel, with: tickerData.price, forLastPrice: true)
+                self.updateLabelsData(
+                    in: self.tickerPriceLabel,
+                    with: tickerData.price,
+                    forLastPrice: true
+                )
                 BinanceTickers.shared.updateTickerInList(tickerData)
             case .failure(let error):
                 print(error)
@@ -119,14 +122,19 @@ extension SingleTickerViewController {
     }
     
     func fetchSingleTickerData() {
-        NetworkManager.shared.fetch(dataType: Ticker.self, from: ApiEndpoints.singleTicker.rawValue + selectedTicker.symbol)
-        { result in
+        NetworkManager.shared.fetch(
+            dataType: Ticker.self,
+            from: ApiEndpoints.singleTicker.rawValue + selectedTicker.symbol
+        ) { result in
             switch result {
             case .success(let currentTickerData):
-                self.updateLabelsData(in: self.tickerPriceLabel, with: currentTickerData.price, forLastPrice: true)
+                self.updateLabelsData(
+                    in: self.tickerPriceLabel,
+                    with: currentTickerData.price,
+                    forLastPrice: true
+                )
                 BinanceTickers.shared.updateTickerInList(currentTickerData)
             case .failure(let error):
-                self.tickerPriceLabel.text = "Last price: \(self.selectedTicker.price)"
                 print(error)
             }
         }
@@ -134,8 +142,10 @@ extension SingleTickerViewController {
     }
     
     func fetchTickerOrderBook() {
-        NetworkManager.shared.fetch(dataType: OrderBook.self, from: ApiEndpoints.singleOrderBook.rawValue + selectedTicker.symbol)
-        { result in
+        NetworkManager.shared.fetch(
+            dataType: OrderBook.self,
+            from: ApiEndpoints.singleOrderBook.rawValue + selectedTicker.symbol
+        ) { result in
             switch result {
             case .success(let orderBookData):
                 self.updateLabelsData(
