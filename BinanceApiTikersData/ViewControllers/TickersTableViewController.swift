@@ -47,7 +47,7 @@ class TickersTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
     @objc private func refreshTable(sender: UIRefreshControl) {

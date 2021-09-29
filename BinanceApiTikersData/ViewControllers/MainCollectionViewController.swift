@@ -39,7 +39,7 @@ class MainCollectionViewController: UICollectionViewController {
             guard let tickersVC = segue.destination as?  TickersTableViewController else { return }
             tickersVC.fetchAllPrices()
         } else if segue.identifier == "showWatchlist" {
-            if BinanceTickers.shared.generateWatchList().count == 0 {
+            if BinanceTickers.shared.watchList.count == 0 {
                 showAlert(alertTitle: "Ooops 🚧", alertMessage: "Watchlist is empty. Add some tickers to watchlist", shouldRedirect: true, to: "showAll")
             }
         }
