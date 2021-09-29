@@ -24,7 +24,7 @@ class SingleTickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tickerNameLabel.text = selectedTicker.symbol
-        tickerPriceLabel.text = selectedTicker.price
+        tickerPriceLabel.text = "Last price: \(selectedTicker.price)"
     }
     
     @IBAction func addToWatchlist(_ sender: UIButton) {
