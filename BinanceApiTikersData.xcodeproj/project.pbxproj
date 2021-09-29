@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C3D253C412FD73139334509 /* Pods_BinanceApiTikersData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AAC8A7C232A09E9DE0057B6 /* Pods_BinanceApiTikersData.framework */; };
 		D80200A92703010800AE735A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200A82703010800AE735A /* AppDelegate.swift */; };
 		D80200AB2703010800AE735A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200AA2703010800AE735A /* SceneDelegate.swift */; };
 		D80200B02703010800AE735A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80200AE2703010800AE735A /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2AAC8A7C232A09E9DE0057B6 /* Pods_BinanceApiTikersData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BinanceApiTikersData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		86044929583211827BAA50C4 /* Pods-BinanceApiTikersData.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinanceApiTikersData.debug.xcconfig"; path = "Target Support Files/Pods-BinanceApiTikersData/Pods-BinanceApiTikersData.debug.xcconfig"; sourceTree = "<group>"; };
 		D80200A52703010800AE735A /* BinanceApiTikersData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinanceApiTikersData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80200A82703010800AE735A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D80200AA2703010800AE735A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +43,7 @@
 		D82C241627036B3200E46883 /* SingleTickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTickerViewController.swift; sourceTree = "<group>"; };
 		D858EA5227039796004133DE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D858EA5427039DE4004133DE /* WatchListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewController.swift; sourceTree = "<group>"; };
+		F4448039AA12FA3AE4DDEF90 /* Pods-BinanceApiTikersData.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinanceApiTikersData.release.xcconfig"; path = "Target Support Files/Pods-BinanceApiTikersData/Pods-BinanceApiTikersData.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,17 +51,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3D253C412FD73139334509 /* Pods_BinanceApiTikersData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		10E95843D7C82B186ED2F015 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2AAC8A7C232A09E9DE0057B6 /* Pods_BinanceApiTikersData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1747C8DB49521E8EB74E7D25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86044929583211827BAA50C4 /* Pods-BinanceApiTikersData.debug.xcconfig */,
+				F4448039AA12FA3AE4DDEF90 /* Pods-BinanceApiTikersData.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D802009C2703010800AE735A = {
 			isa = PBXGroup;
 			children = (
 				D80200A72703010800AE735A /* BinanceApiTikersData */,
 				D80200A62703010800AE735A /* Products */,
+				1747C8DB49521E8EB74E7D25 /* Pods */,
+				10E95843D7C82B186ED2F015 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -154,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D80200B92703010900AE735A /* Build configuration list for PBXNativeTarget "BinanceApiTikersData" */;
 			buildPhases = (
+				C1B6390462FE50524353BAC5 /* [CP] Check Pods Manifest.lock */,
 				D80200A12703010800AE735A /* Sources */,
 				D80200A22703010800AE735A /* Frameworks */,
 				D80200A32703010800AE735A /* Resources */,
+				5329E3C2B1994DF9A7372BF6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -212,6 +239,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5329E3C2B1994DF9A7372BF6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BinanceApiTikersData/Pods-BinanceApiTikersData-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BinanceApiTikersData/Pods-BinanceApiTikersData-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BinanceApiTikersData/Pods-BinanceApiTikersData-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C1B6390462FE50524353BAC5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BinanceApiTikersData-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D80200A12703010800AE735A /* Sources */ = {
@@ -372,6 +441,7 @@
 		};
 		D80200BA2703010900AE735A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86044929583211827BAA50C4 /* Pods-BinanceApiTikersData.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -401,6 +471,7 @@
 		};
 		D80200BB2703010900AE735A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4448039AA12FA3AE4DDEF90 /* Pods-BinanceApiTikersData.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Binance Price Data-->
+        <!--Crypto tracker-->
         <scene sceneID="Rzs-dN-hx3">
             <objects>
                 <collectionViewController id="zBY-FR-0ss" customClass="MainCollectionViewController" customModule="BinanceApiTikersData" customModuleProvider="target" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                             <outlet property="delegate" destination="zBY-FR-0ss" id="l4g-lI-U0I"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Binance Price Data" id="mml-ai-xwl"/>
+                    <navigationItem key="navigationItem" title="Crypto tracker" id="mml-ai-xwl"/>
                     <connections>
                         <segue destination="J30-In-JU1" kind="show" identifier="showAll" id="zji-I2-Kjp"/>
                         <segue destination="4jL-Mi-11W" kind="show" identifier="showWatchlist" id="XmX-kK-Yh2"/>
@@ -226,8 +226,8 @@
                                     <action selector="addToWatchlist:" destination="nVo-72-5pR" eventType="touchUpInside" id="ULK-HK-0db"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="43" translatesAutoresizingMaskIntoConstraints="NO" id="AZE-Vl-7po">
-                                <rect key="frame" x="16" y="211.5" width="209" height="71.5"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AZE-Vl-7po">
+                                <rect key="frame" x="16" y="211.5" width="163" height="71.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="1Ik-WV-w9m">
                                         <rect key="frame" x="0.0" y="26.5" width="27" height="45"/>
@@ -247,7 +247,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="LzX-KO-TMn">
-                                        <rect key="frame" x="70" y="0.0" width="39" height="71.5"/>
+                                        <rect key="frame" x="47" y="0.0" width="39" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDO-Di-Aae">
                                                 <rect key="frame" x="0.0" y="0.0" width="39" height="20.5"/>
@@ -270,7 +270,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="mAO-Fj-Ylx">
-                                        <rect key="frame" x="152" y="0.0" width="57" height="71.5"/>
+                                        <rect key="frame" x="106" y="0.0" width="57" height="71.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Volume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hvl-OW-qGr">
                                                 <rect key="frame" x="0.0" y="0.0" width="57" height="20.5"/>
@@ -294,7 +294,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="mAO-Fj-Ylx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LzX-KO-TMn" secondAttribute="trailing" constant="30" id="icp-Oh-qpN"/>
+                                    <constraint firstItem="mAO-Fj-Ylx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="LzX-KO-TMn" secondAttribute="trailing" constant="10" id="icp-Oh-qpN"/>
                                 </constraints>
                             </stackView>
                         </subviews>
