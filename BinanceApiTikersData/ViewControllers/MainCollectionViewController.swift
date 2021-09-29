@@ -10,12 +10,6 @@ import UIKit
 class MainCollectionViewController: UICollectionViewController {
     
     let userActions = UserActions.allCases
-    let myWatchlist = WatchList.shared
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

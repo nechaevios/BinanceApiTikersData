@@ -9,7 +9,6 @@ import UIKit
 
 class SingleTickerViewController: UIViewController {
     
-    
     @IBOutlet weak var tickerNameLabel: UILabel!
     @IBOutlet weak var tickerPriceLabel: UILabel!
     
@@ -29,21 +28,24 @@ class SingleTickerViewController: UIViewController {
     }
     
     @IBAction func addToWatchlist(_ sender: UIButton) {
-        if WatchList.shared.addToWatchList(selectedTicker) {
+        if BinanceTickers.shared.addToWatchList(selectedTicker.symbol){
             successAlert()
+            
         }
+        
     }
     
     private func successAlert() {
         let alert = UIAlertController(
             title: "Success",
-            message: "\(selectedTicker.symbol) was added to wacthlist",
+            message: "\(selectedTicker.symbol) was added to watchlist",
             preferredStyle: .alert
         )
         
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         self.present(alert, animated: true)
+        
     }
     
     private func failureAlert() {
@@ -56,6 +58,7 @@ class SingleTickerViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         self.present(alert, animated: true)
+        
     }
     
 }
@@ -68,12 +71,13 @@ extension SingleTickerViewController {
             switch result {
             case .success(let currentTickerData):
                 self.tickerPriceLabel.text = "Last price: \(currentTickerData.price)"
-                TickerList.shared.updateTickerInList(currentTickerData)
+                BinanceTickers.shared.updateTickerInList(currentTickerData)
             case .failure(let error):
                 self.tickerPriceLabel.text = "Last price: \(self.selectedTicker.price)"
                 print(error)
             }
         }
+        
     }
     
     func fetchTickerOrderBook() {
@@ -88,5 +92,7 @@ extension SingleTickerViewController {
                 print(error)
             }
         }
+        
     }
+    
 }

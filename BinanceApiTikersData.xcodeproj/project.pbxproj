@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D80200A92703010800AE735A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200A82703010800AE735A /* AppDelegate.swift */; };
 		D80200AB2703010800AE735A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200AA2703010800AE735A /* SceneDelegate.swift */; };
-		D80200AD2703010800AE735A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200AC2703010800AE735A /* ViewController.swift */; };
 		D80200B02703010800AE735A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80200AE2703010800AE735A /* Main.storyboard */; };
 		D80200B22703010900AE735A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D80200B12703010900AE735A /* Assets.xcassets */; };
 		D80200B52703010900AE735A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D80200B32703010900AE735A /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		D80200A52703010800AE735A /* BinanceApiTikersData.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BinanceApiTikersData.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80200A82703010800AE735A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D80200AA2703010800AE735A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D80200AC2703010800AE735A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D80200AF2703010800AE735A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D80200B12703010900AE735A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D80200B42703010900AE735A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 		D80200BE2703013D00AE735A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D80200AC2703010800AE735A /* ViewController.swift */,
 				D80200C02703051F00AE735A /* MainCollectionViewController.swift */,
 				D80200C5270309F900AE735A /* TickersTableViewController.swift */,
 				D82C241627036B3200E46883 /* SingleTickerViewController.swift */,
@@ -226,7 +223,6 @@
 				D80200C32703063600AE735A /* UserActionCell.swift in Sources */,
 				D858EA5527039DE4004133DE /* WatchListTableViewController.swift in Sources */,
 				D80200C827030E8F00AE735A /* Ticker.swift in Sources */,
-				D80200AD2703010800AE735A /* ViewController.swift in Sources */,
 				D80200C12703051F00AE735A /* MainCollectionViewController.swift in Sources */,
 				D80200CB2703173400AE735A /* TickerCell.swift in Sources */,
 				D80200A92703010800AE735A /* AppDelegate.swift in Sources */,

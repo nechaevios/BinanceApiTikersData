@@ -9,7 +9,7 @@ import UIKit
 
 class TickersTableViewController: UITableViewController {
     
-    private var tickers = TickerList.shared
+    private var tickers = BinanceTickers.shared
     private var filteredTickers: [Ticker] = []
     
     private let searchController = UISearchController(searchResultsController: nil)
