@@ -30,7 +30,8 @@ class SingleTickerViewController: UIViewController {
     @IBAction func addToWatchlist(_ sender: UIButton) {
         if BinanceTickers.shared.addToWatchList(selectedTicker.symbol){
             successAlert()
-            
+        } else {
+            failureAlert()
         }
         
     }
@@ -51,7 +52,7 @@ class SingleTickerViewController: UIViewController {
     private func failureAlert() {
         let alert = UIAlertController(
             title: "Failure",
-            message: "\(selectedTicker.symbol) is already in wacthlist",
+            message: "\(selectedTicker.symbol) is already in watchlist",
             preferredStyle: .alert
         )
         
@@ -67,7 +68,7 @@ extension SingleTickerViewController {
     
     // MARK: Networking
     func fetchSingleTickerData() {
-        NetworkManager.shared.fetch(dataType: Ticker.self, from: ApiEndpoint.singleTicker.rawValue + selectedTicker.symbol) { result in
+        NetworkManager.shared.fetch(dataType: Ticker.self, from: ApiEndpoints.singleTicker.rawValue + selectedTicker.symbol) { result in
             switch result {
             case .success(let currentTickerData):
                 self.tickerPriceLabel.text = "Last price: \(currentTickerData.price)"
@@ -81,7 +82,7 @@ extension SingleTickerViewController {
     }
     
     func fetchTickerOrderBook() {
-        NetworkManager.shared.fetch(dataType: OrderBook.self, from: ApiEndpoint.singleOrderBook.rawValue + selectedTicker.symbol) { result in
+        NetworkManager.shared.fetch(dataType: OrderBook.self, from: ApiEndpoints.singleOrderBook.rawValue + selectedTicker.symbol) { result in
             switch result {
             case .success(let orderBookData):
                 self.bidPriceLabel.text = orderBookData.bidPrice

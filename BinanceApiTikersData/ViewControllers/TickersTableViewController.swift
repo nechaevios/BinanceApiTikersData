@@ -93,7 +93,7 @@ extension TickersTableViewController {
 // MARK: Networking
 extension TickersTableViewController {
     func fetchAllPrices() {
-        NetworkManager.shared.fetch(dataType: [Ticker].self, from: ApiEndpoint.allTickers.rawValue) { result in
+        NetworkManager.shared.fetch(dataType: [Ticker].self, from: ApiEndpoints.allTickers.rawValue) { result in
             switch result {
             case .success(let tickersData):
                 self.tickers.tickerList = tickersData
@@ -106,6 +106,7 @@ extension TickersTableViewController {
     }
 }
 
+// MARK: Custom UIActivityIndicatorView
 extension TickersTableViewController {
     private func runSpinner(in view: UIView) -> UIActivityIndicatorView{
         let activitySpinner = UIActivityIndicatorView(style: .large)
@@ -120,6 +121,7 @@ extension TickersTableViewController {
     }
 }
 
+// MARK: Search
 extension TickersTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         filterContentWithText(searchController.searchBar.text ?? "")

@@ -24,7 +24,7 @@ class MainCollectionViewController: UICollectionViewController {
         return cell
         
     }
-        
+    
     // MARK: UICollectionViewDelegate
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let userAction = userActions[indexPath.item]
@@ -32,6 +32,7 @@ class MainCollectionViewController: UICollectionViewController {
         switch userAction {
         case .showAllTickers: performSegue(withIdentifier: "showAll", sender: nil)
         case .showWatchlist: performSegue(withIdentifier: "showWatchlist", sender: nil)
+        case .about: showAlert(alertTitle: "By Sergey Nechaev", alertMessage: "From traders to traders. Contacts: sergey@nechaev.ru")
         }
         
     }
@@ -41,16 +42,41 @@ class MainCollectionViewController: UICollectionViewController {
         if segue.identifier == "showAll" {
             guard let tickersVC = segue.destination as?  TickersTableViewController else { return }
             tickersVC.fetchAllPrices()
+        } else if segue.identifier == "showWatchlist" {
+            if BinanceTickers.shared.generateWatchList().count == 0 {
+                showAlert(alertTitle: "Ooops 🚧", alertMessage: "Watchlist is empty. Add some tickers to watchlist")
+            }
         }
+        
     }
     
-
-
+    private func redirectToTickers() {
+        performSegue(withIdentifier: "showAll", sender: nil)
+        
+    }
+    
+    
+    private func showAlert(alertTitle: String, alertMessage: String) {
+        let alert = UIAlertController(
+            title: alertTitle,
+            message: alertMessage,
+            preferredStyle: .alert
+        )
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { okAction in
+            self.redirectToTickers()
+        }
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
+    }
+    
 }
 
 extension MainCollectionViewController {
     enum UserActions: String, CaseIterable {
         case showAllTickers = "Show all tickers"
         case showWatchlist = "Show my watchlist"
+        case about = "About"
     }
+    
 }

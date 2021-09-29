@@ -7,16 +7,18 @@
 
 import Foundation
 
-enum ApiEndpoint: String {
+enum ApiEndpoints: String {
     case allTickers = "https://api.binance.com/api/v3/ticker/price"
     case singleTicker = "https://api.binance.com/api/v3/ticker/price?symbol="
     case singleOrderBook = "https://api.binance.com/api/v3/ticker/bookTicker?symbol="
+
 }
 
 enum NetworkError: Error {
     case invalidURL
     case noData
     case decodingError
+
 }
 
 class NetworkManager {
@@ -48,8 +50,7 @@ class NetworkManager {
                 completion(.failure(.decodingError))
             }
         }.resume()
+        
     }
-    
-    
     
 }
