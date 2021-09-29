@@ -32,8 +32,8 @@ class WatchListTableViewController: UITableViewController {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let selectedTicker = sortedWatchList[indexPath.row]
         let singleTickerVC = segue.destination as! SingleTickerViewController
-        singleTickerVC.selectedTicker = selectedTicker
         
+        singleTickerVC.selectedTicker = selectedTicker
         singleTickerVC.fetchTickerOrderBook()
         singleTickerVC.fetchSingleTickerData()
         

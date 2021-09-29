@@ -81,13 +81,13 @@ extension TickersTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         let selectedTicker = isFiltering ? filteredTickers[indexPath.row] : tickers.tickerList[indexPath.row]
-
-        let singleTickerVC = segue.destination as! SingleTickerViewController
-        singleTickerVC.selectedTicker = selectedTicker
-//        singleTickerVC.fetchTickerOrderBook()
-//        singleTickerVC.fetchSingleTickerData()
-        singleTickerVC.alamofireUpdateLastPrice()
-        singleTickerVC.alamofireUpdateOrderBook()
+        if let singleTickerVC = segue.destination as? SingleTickerViewController {
+            singleTickerVC.selectedTicker = selectedTicker
+            //        singleTickerVC.fetchTickerOrderBook()
+            //        singleTickerVC.fetchSingleTickerData()
+            singleTickerVC.alamofireUpdateLastPrice()
+            singleTickerVC.alamofireUpdateOrderBook()
+        }
         
     }
 }
