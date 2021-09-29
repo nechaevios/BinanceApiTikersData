@@ -9,7 +9,7 @@ import UIKit
 
 class WatchListTableViewController: UITableViewController {
     
-    private var sortedWatchList  = BinanceTickers.shared.generateWatchList()
+    private var sortedWatchList  = BinanceTickers.shared.generateWatchList().sorted(by: < )
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

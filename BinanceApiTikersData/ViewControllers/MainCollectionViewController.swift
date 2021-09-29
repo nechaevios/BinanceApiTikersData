@@ -44,28 +44,29 @@ class MainCollectionViewController: UICollectionViewController {
             tickersVC.fetchAllPrices()
         } else if segue.identifier == "showWatchlist" {
             if BinanceTickers.shared.generateWatchList().count == 0 {
-                showAlert(alertTitle: "Ooops 🚧", alertMessage: "Watchlist is empty. Add some tickers to watchlist")
+                showAlert(alertTitle: "Ooops 🚧", alertMessage: "Watchlist is empty. Add some tickers to watchlist", shouldRedirect: true, to: "showAll")
             }
         }
         
     }
     
-    private func redirectToTickers() {
-        performSegue(withIdentifier: "showAll", sender: nil)
+    private func redirectTo(segue identifier: String) {
+        performSegue(withIdentifier: identifier, sender: nil)
         
     }
     
-    
-    private func showAlert(alertTitle: String, alertMessage: String) {
+    private func showAlert(alertTitle: String, alertMessage: String, shouldRedirect: Bool = false, to identifier: String = "") {
         let alert = UIAlertController(
             title: alertTitle,
             message: alertMessage,
             preferredStyle: .alert
         )
         
-        let okAction = UIAlertAction(title: "OK", style: .default) { okAction in
-            self.redirectToTickers()
-        }
+        let okAction = shouldRedirect ? UIAlertAction(title: "OK", style: .default)
+        { okAction in
+            self.redirectTo(segue: identifier)
+        } : UIAlertAction(title: "OK", style: .default)
+        
         alert.addAction(okAction)
         self.present(alert, animated: true)
     }
