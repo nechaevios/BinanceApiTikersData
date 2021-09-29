@@ -24,7 +24,6 @@ class SingleTickerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = selectedTicker.symbol
-//        tickerNameLabel.text = selectedTicker.symbol
         tickerPriceLabel.text = "Last price: \(selectedTicker.price)"
     }
     
