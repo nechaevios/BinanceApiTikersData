@@ -14,7 +14,7 @@ class BinanceTickers {
     
     var tickerList: [Ticker] = []
     var watchList: [Ticker] {
-        self.tickerList.filter { self.watchListSymbols.contains( $0.symbol ) }
+        tickerList.filter { watchListSymbols.contains( $0.symbol ) }
     }
 
     private var watchListSymbols: [String] = []

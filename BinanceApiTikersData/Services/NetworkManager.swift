@@ -83,4 +83,8 @@ class NetworkManager {
                 }
             }
     }
+    
+    func fetchLastPriceWSS(_ url: String, completion: @escaping(Result <Ticker, NetworkError>) -> Void) {
+        
+    }
 }

@@ -113,6 +113,7 @@ extension TickersTableViewController {
         let xPosition = view.frame.width / 2
         let yPosition = view.frame.height / 2 - (navigationController?.navigationBar.frame.height)!
         activitySpinner.center = CGPoint(x: xPosition, y: yPosition)
+        
         activitySpinner.startAnimating()
         
         view.addSubview(activitySpinner)
