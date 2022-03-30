@@ -19,6 +19,7 @@
 		D80200C827030E8F00AE735A /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200C727030E8F00AE735A /* Ticker.swift */; };
 		D80200CB2703173400AE735A /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200CA2703173400AE735A /* TickerCell.swift */; };
 		D80200CD27032E2900AE735A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D80200CC27032E2900AE735A /* NetworkManager.swift */; };
+		D821672427F4A2D200DF04C3 /* demo.gif in Resources */ = {isa = PBXBuildFile; fileRef = D821672327F4A2D200DF04C3 /* demo.gif */; };
 		D82C241727036B3200E46883 /* SingleTickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D82C241627036B3200E46883 /* SingleTickerViewController.swift */; };
 		D858EA5327039796004133DE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D858EA5227039796004133DE /* DataManager.swift */; };
 		D858EA5527039DE4004133DE /* WatchListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D858EA5427039DE4004133DE /* WatchListTableViewController.swift */; };
@@ -40,6 +41,8 @@
 		D80200C727030E8F00AE735A /* Ticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
 		D80200CA2703173400AE735A /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
 		D80200CC27032E2900AE735A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		D821672227F4A19E00DF04C3 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D821672327F4A2D200DF04C3 /* demo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = demo.gif; sourceTree = "<group>"; };
 		D82C241627036B3200E46883 /* SingleTickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleTickerViewController.swift; sourceTree = "<group>"; };
 		D858EA5227039796004133DE /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D858EA5427039DE4004133DE /* WatchListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchListTableViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +81,8 @@
 		D802009C2703010800AE735A = {
 			isa = PBXGroup;
 			children = (
+				D821672227F4A19E00DF04C3 /* README.md */,
+				D821672127F4A18600DF04C3 /* demo */,
 				D80200A72703010800AE735A /* BinanceApiTikersData */,
 				D80200A62703010800AE735A /* Products */,
 				1747C8DB49521E8EB74E7D25 /* Pods */,
@@ -171,6 +176,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D821672127F4A18600DF04C3 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				D821672327F4A2D200DF04C3 /* demo.gif */,
+			);
+			path = demo;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -234,6 +247,7 @@
 				D80200B52703010900AE735A /* LaunchScreen.storyboard in Resources */,
 				D80200B22703010900AE735A /* Assets.xcassets in Resources */,
 				D80200B02703010800AE735A /* Main.storyboard in Resources */,
+				D821672427F4A2D200DF04C3 /* demo.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
